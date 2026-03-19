@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "models": "Modelder",
+    "playground": "Synaq alany",
+    "docs": "Quzhattama",
+    "leaderboard": "Koshbasshylar",
+    "blog": "Blog"
+  },
+  "footer": {
+    "description": "Qazaq NLP ekojuiesinin negizgi ortalyghy",
+    "github": "GitHub",
+    "huggingface": "HuggingFace",
+    "rights": "Barlyq quqyqtar qorghalgan"
+  },
+  "home": {
+    "title": "Qazaq NLP Platformasy",
+    "subtitle": "Qazaq tili ushin modelder, quraldar zhane zertteuler"
+  }
+}

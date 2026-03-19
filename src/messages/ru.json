@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "models": "Modeli",
+    "playground": "Pesochnitsa",
+    "docs": "Dokumentatsiya",
+    "leaderboard": "Liderboard",
+    "blog": "Blog"
+  },
+  "footer": {
+    "description": "Avtoritetnyi tsentr ekosistemy kazakhskogo NLP",
+    "github": "GitHub",
+    "huggingface": "HuggingFace",
+    "rights": "Vse prava zashchishcheny"
+  },
+  "home": {
+    "title": "Kazakhskaya NLP Platforma",
+    "subtitle": "Modeli, instrumenty i issledovaniya dlya kazakhskogo yazyka"
+  }
+}

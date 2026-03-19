@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "models": "Models",
+    "playground": "Playground",
+    "docs": "Docs",
+    "leaderboard": "Leaderboard",
+    "blog": "Blog"
+  },
+  "footer": {
+    "description": "The authoritative center of the Kazakh NLP ecosystem",
+    "github": "GitHub",
+    "huggingface": "HuggingFace",
+    "rights": "All rights reserved"
+  },
+  "home": {
+    "title": "Kazakh NLP Platform",
+    "subtitle": "Models, tools, and research for the Kazakh language"
+  }
+}
