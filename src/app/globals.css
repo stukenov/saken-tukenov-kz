@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   --color-background: #ffffff;
@@ -10,6 +10,42 @@
   --color-border: #e5e5e5;
   --color-accent: #2563eb;
 
+  /* Landing page colors */
+  --color-accent-teal: #0EA5E9;
+  --color-accent-cyan: #06B6D4;
+  --color-accent-teal-dark: #0284C7;
+  --color-glass: rgba(255, 255, 255, 0.70);
+  --color-glass-border: rgba(255, 255, 255, 0.30);
+  --color-slate-900: #0F172A;
+  --color-slate-600: #475569;
+  --color-slate-400: #94A3B8;
+  --color-slate-200: #E2E8F0;
+  --color-section-bg: #F8FAFB;
+
   --spacing-section: 6rem;
   --spacing-content: 3rem;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes float-badge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float-badge 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-gradient { animation: none; }
+  .animate-float { animation: none; }
 }
