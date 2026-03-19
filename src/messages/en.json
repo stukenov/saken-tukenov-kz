@@ -31,6 +31,25 @@
       "params": "Parameters",
       "architecture": "Architecture",
       "training_data": "Training data"
+    },
+    "impact": {
+      "heading": "Impact",
+      "tilqazyna_title": "Tilqazyna",
+      "tilqazyna_description": "Uses SozKZ GEC models for Kazakh grammar correction, helping thousands of users write better Kazakh",
+      "stat_experiments": "experiments",
+      "stat_models": "published models",
+      "stat_tokens": "tokens trained"
+    },
+    "docs_teaser": {
+      "heading": "For Developers",
+      "description": "Python SDK, REST API, and comprehensive documentation to integrate Kazakh NLP into your applications",
+      "cta": "Read the docs",
+      "coming_soon": "Coming soon"
+    },
+    "bottom_cta": {
+      "heading": "Ready to build with Kazakh NLP?",
+      "cta": "Get Started",
+      "coming_soon": "Coming soon"
     }
   }
 }

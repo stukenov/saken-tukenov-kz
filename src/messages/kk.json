@@ -31,6 +31,25 @@
       "params": "Параметрлер",
       "architecture": "Архитектура",
       "training_data": "Оқыту деректері"
+    },
+    "impact": {
+      "heading": "Нәтижелер",
+      "tilqazyna_title": "Тілқазына",
+      "tilqazyna_description": "SozKZ GEC модельдерін қазақ тілінің грамматикасын түзету үшін пайдаланады, мыңдаған пайдаланушыларға сауатты жазуға көмектеседі",
+      "stat_experiments": "тәжірибе",
+      "stat_models": "жарияланған модель",
+      "stat_tokens": "токен оқытылды"
+    },
+    "docs_teaser": {
+      "heading": "Әзірлеушілерге",
+      "description": "Python SDK, REST API және толық құжаттама — қазақ NLP-ді қосымшаларыңызға біріктіру үшін",
+      "cta": "Құжаттаманы оқу",
+      "coming_soon": "Жақында"
+    },
+    "bottom_cta": {
+      "heading": "Қазақ NLP-мен жұмыс істеуге дайынсыз ба?",
+      "cta": "Бастау",
+      "coming_soon": "Жақында"
     }
   }
 }
