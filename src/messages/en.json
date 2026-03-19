@@ -15,5 +15,22 @@
   "home": {
     "title": "Kazakh NLP Platform",
     "subtitle": "Models, tools, and research for the Kazakh language"
+  },
+  "landing": {
+    "hero": {
+      "headline": "Building the foundation for Kazakh language AI",
+      "subtitle": "Open-source models from 50M to 600M parameters, powering the next generation of Kazakh NLP",
+      "cta_playground": "Try Playground",
+      "cta_models": "Browse Models",
+      "coming_soon": "Coming soon"
+    },
+    "models": {
+      "heading": "Models",
+      "subtitle": "Open-source Kazakh language models, from 50M to 600M parameters",
+      "view_all": "View all 7 models",
+      "params": "Parameters",
+      "architecture": "Architecture",
+      "training_data": "Training data"
+    }
   }
 }
