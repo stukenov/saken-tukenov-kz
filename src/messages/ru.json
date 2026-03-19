@@ -1,19 +1,19 @@
 {
   "nav": {
-    "models": "Modeli",
-    "playground": "Pesochnitsa",
-    "docs": "Dokumentatsiya",
-    "leaderboard": "Liderboard",
-    "blog": "Blog"
+    "models": "Модели",
+    "playground": "Песочница",
+    "docs": "Документация",
+    "leaderboard": "Лидерборд",
+    "blog": "Блог"
   },
   "footer": {
-    "description": "Avtoritetnyi tsentr ekosistemy kazakhskogo NLP",
+    "description": "Авторитетный центр экосистемы казахского NLP",
     "github": "GitHub",
     "huggingface": "HuggingFace",
-    "rights": "Vse prava zashchishcheny"
+    "rights": "Все права защищены"
   },
   "home": {
-    "title": "Kazakhskaya NLP Platforma",
-    "subtitle": "Modeli, instrumenty i issledovaniya dlya kazakhskogo yazyka"
+    "title": "Казахская NLP Платформа",
+    "subtitle": "Модели, инструменты и исследования для казахского языка"
   }
 }

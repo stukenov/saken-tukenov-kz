@@ -1,19 +1,19 @@
 {
   "nav": {
-    "models": "Modelder",
-    "playground": "Synaq alany",
-    "docs": "Quzhattama",
-    "leaderboard": "Koshbasshylar",
-    "blog": "Blog"
+    "models": "Модельдер",
+    "playground": "Сынақ алаңы",
+    "docs": "Құжаттама",
+    "leaderboard": "Көшбасшылар",
+    "blog": "Блог"
   },
   "footer": {
-    "description": "Qazaq NLP ekojuiesinin negizgi ortalyghy",
+    "description": "Қазақ NLP экожүйесінің негізгі орталығы",
     "github": "GitHub",
     "huggingface": "HuggingFace",
-    "rights": "Barlyq quqyqtar qorghalgan"
+    "rights": "Барлық құқықтар қорғалған"
   },
   "home": {
-    "title": "Qazaq NLP Platformasy",
-    "subtitle": "Qazaq tili ushin modelder, quraldar zhane zertteuler"
+    "title": "Қазақ NLP Платформасы",
+    "subtitle": "Қазақ тілі үшін модельдер, құралдар және зерттеулер"
   }
 }
