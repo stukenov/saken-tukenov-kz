@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SozKZ: Training Efficient Small Language Models for Kazakh from Scratch — Saken Tukenov</title>
+<meta name="description" content="SozKZ — a family of Llama-architecture language models (50M–600M) trained from scratch on 9 billion tokens of Kazakh text with a dedicated 50K BPE tokenizer.">
+<style>
+body { max-width: 800px; margin: 0 auto; padding: 20px; font-family: Arial, sans-serif; line-height: 1.7; color: #000; }
+a { color: #008ace; text-decoration: none; border-bottom: 1px solid #b2ccf0; }
+a:hover { color: #C00; border-color: #f0b2b2; }
+h1 { font-size: 1.5em; margin-bottom: 0.3em; }
+h2 { margin-top: 2em; font-size: 1.15em; }
+h3 { margin-top: 1.5em; font-size: 1em; }
+.meta { color: #666; margin-bottom: 1.5em; }
+.abstract { margin: 1.5em 0; }
+table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+th { background: #f5f5f5; font-weight: bold; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; }
+tr.ours { background: #f0f7ff; }
+.best { font-weight: bold; }
+.actions { margin: 1.5em 0; }
+.actions a { margin-right: 16px; }
+figure { margin: 1.5em 0; }
+figure img { max-width: 100%; border: 1px solid #ddd; }
+figcaption { color: #666; font-size: 0.9em; margin-top: 0.5em; }
+.citation { background: #f5f5f5; padding: 12px 16px; font-family: monospace; font-size: 0.85em; line-height: 1.5; overflow-x: auto; white-space: pre; margin: 1em 0; }
+hr { border: none; border-top: 1px solid #ddd; margin: 2em 0; }
+</style>
+</head>
+<body>
+
+<p><a href="/">← saken.tukenov.kz</a></p>
+
+<h1>SozKZ: Training Efficient Small Language Models for Kazakh from Scratch</h1>
+<p class="meta">Saken Tukenov · Independent Researcher · 2026</p>
+
+<p class="actions">
+<a href="https://arxiv.org/abs/2603.20854">arXiv:2603.20854</a>
+<a href="/sozkz.pdf">Download PDF</a>
+<a href="https://huggingface.co/stukenov">Models on HuggingFace</a>
+<a href="https://huggingface.co/stukenov/kazakh-bpe-32k">Tokenizer</a>
+</p>
+
+<hr>
+
+<h2>Abstract</h2>
+<p class="abstract">Kazakh, a Turkic language spoken by over 22 million people, remains underserved by existing multilingual language models, which allocate minimal capacity to low-resource languages and employ tokenizers ill-suited to agglutinative morphology. We present <strong>SozKZ</strong>, a family of Llama-architecture language models (50M–600M parameters) trained entirely from scratch on 9 billion tokens of Kazakh text with a dedicated 50K BPE tokenizer. We evaluate all models on three Kazakh benchmarks — multiple-choice cultural QA, reading comprehension (Belebele), and topic classification (SIB-200) — alongside five multilingual baselines ranging from 500M to 3B parameters. Our 600M model achieves 30.3% accuracy on Kazakh cultural QA, approaching the 32.0% of Llama-3.2-1B (2× larger), and 25.5% on SIB-200 topic classification, surpassing all evaluated multilingual models up to 2B parameters. These results demonstrate that small, dedicated models trained from scratch with a language-appropriate tokenizer offer a viable path for low-resource language technology. All models and the tokenizer are released under open licenses.</p>
+
+<hr>
+
+<h2>Benchmark Results</h2>
+<p>Accuracy (%) on three Kazakh benchmarks. Random baselines: MC QA = 25% (4-choice), Belebele = 25% (4-choice), SIB-200 = 14.3% (7-class).</p>
+
+<table>
+<thead>
+<tr><th>Model</th><th>Params</th><th>MC QA</th><th>Belebele</th><th>SIB-200</th></tr>
+</thead>
+<tbody>
+<tr class="ours"><td>SozKZ-50M</td><td class="num">50M</td><td class="num">—</td><td class="num">27.0</td><td class="num">25.5</td></tr>
+<tr class="ours"><td>SozKZ-150M</td><td class="num">150M</td><td class="num">24.7</td><td class="num">27.0</td><td class="num">25.5</td></tr>
+<tr class="ours"><td>SozKZ-300M</td><td class="num">300M</td><td class="num">28.3</td><td class="num">27.8</td><td class="num">25.5</td></tr>
+<tr class="ours"><td>SozKZ-600M</td><td class="num">600M</td><td class="num">30.3</td><td class="num">27.0</td><td class="num best">25.5</td></tr>
+<tr><td>Qwen-0.5B</td><td class="num">500M</td><td class="num">31.5</td><td class="num">30.0</td><td class="num">19.1</td></tr>
+<tr><td>Llama-3.2-1B</td><td class="num">1B</td><td class="num">32.0</td><td class="num">26.7</td><td class="num">20.1</td></tr>
+<tr><td>Qwen-1.5B</td><td class="num">2B</td><td class="num best">37.1</td><td class="num">29.9</td><td class="num">11.8</td></tr>
+<tr><td>Gemma-2B</td><td class="num">2B</td><td class="num">32.5</td><td class="num">30.6</td><td class="num">20.1</td></tr>
+<tr><td>Llama-3.2-3B</td><td class="num">3B</td><td class="num">34.2</td><td class="num best">31.7</td><td class="num best">28.4</td></tr>
+</tbody>
+</table>
+
+<figure>
+<img src="/comparison_bar.png" alt="Performance comparison across model families">
+<figcaption>Fig. 1 — Task-level performance comparison. SozKZ models vs. multilingual competitors.</figcaption>
+</figure>
+
+<h3>Key findings</h3>
+<ul>
+<li><strong>Topic classification (SIB-200):</strong> SozKZ-600M surpasses all multilingual models up to 2B parameters. Even SozKZ-50M outperforms Qwen-1.5B (30× larger).</li>
+<li><strong>Multiple-choice QA:</strong> SozKZ-600M (30.3%) approaches Llama-3.2-1B (32.0%) with 40% fewer parameters.</li>
+<li><strong>Scaling:</strong> MC QA accuracy rises consistently from 22.8% (50M) to 30.3% (600M) with no sign of saturation.</li>
+</ul>
+
+<hr>
+
+<h2>Tokenizer Efficiency</h2>
+<p>Characters per token on Kazakh text — higher is better.</p>
+
+<table>
+<thead>
+<tr><th>Tokenizer</th><th>Vocab Size</th><th>Chars/Token</th></tr>
+</thead>
+<tbody>
+<tr class="ours"><td>SozKZ (50K)</td><td class="num">50,000</td><td class="num best">5.82</td></tr>
+<tr><td>Gemma</td><td class="num">256,000</td><td class="num">2.53</td></tr>
+<tr><td>Mistral</td><td class="num">32,768</td><td class="num">2.41</td></tr>
+<tr><td>Qwen 2.5</td><td class="num">151,936</td><td class="num">2.34</td></tr>
+<tr><td>Llama 3</td><td class="num">128,256</td><td class="num">2.18</td></tr>
+</tbody>
+</table>
+
+<figure>
+<img src="/fertility_bar.png" alt="Tokenizer fertility comparison">
+<figcaption>Fig. 2 — Tokenizer efficiency. SozKZ encodes Kazakh 2.4× more efficiently than the best multilingual alternative.</figcaption>
+</figure>
+
+<hr>
+
+<h2>Scaling Behavior</h2>
+
+<figure>
+<img src="/scaling_all.png" alt="Performance vs. model size">
+<figcaption>Fig. 3 — Performance vs. model size. SozKZ models alongside multilingual competitors.</figcaption>
+</figure>
+
+<hr>
+
+<h2>Resources</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/2603.20854">arXiv:2603.20854</a></li>
+<li><a href="/sozkz.pdf">Full paper (PDF)</a></li>
+<li><a href="https://huggingface.co/stukenov">All SozKZ models on HuggingFace</a></li>
+<li><a href="https://huggingface.co/stukenov/kazakh-bpe-32k">Kazakh BPE tokenizer (50K)</a></li>
+<li><a href="https://github.com/stukenov">Training pipeline on GitHub</a></li>
+</ul>
+
+<hr>
+
+<h2>Citation</h2>
+<div class="citation">@article{tukenov2026sozkz,
+  title   = {SozKZ: Training Efficient Small Language Models
+             for Kazakh from Scratch},
+  author  = {Tukenov, Saken},
+  year    = {2026},
+  eprint  = {2603.20854},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2603.20854}
+}</div>
+
+<hr>
+<p><a href="/">← saken.tukenov.kz</a></p>
+
+</body>
+</html>

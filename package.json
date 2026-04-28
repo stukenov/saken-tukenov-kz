@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "deploy": "wrangler pages deploy public --project-name=saken-tukenov-kz"
+    "deploy": "wrangler pages deploy public --project-name=saken"
   },
   "devDependencies": {
     "wrangler": "^4.75.0"
